@@ -20,8 +20,8 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('months', views.months),
+    path('', views.months),
     # path('months/january', views.monthslist),
-    path('months/<str:monthsl>', views.monthslist, name="months-description")
+    path('<str:monthsl>', views.monthslist, name="months-description")
 
 ]

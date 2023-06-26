@@ -6,7 +6,6 @@ monthsinStr = {
     "march": "I will be Javascript expert InshaA",
     "april": "I will be React.js pro developer InshaA",
     "may": "I will be python expert InshaA",
-    "may": "I will be django expert InshaA",
     "june": "I will be doing react projects InshaA",
     "july": "I will be doing django projects InshaA",
     "august": "I will be making portfolio in React+Django InshaA",
@@ -19,21 +18,25 @@ monthsinStr = {
 
 
 def months(request):
-    # return HttpResponse(" Salam I am Months: ")
-    # return HttpResponse(monthsinStr.get("january"))
     monthsList = ""
     for month in list(monthsinStr.keys()):
-        # print(month)
         redir = reverse("months-description", args=[month])
         monthsList += f"<li><a href=\"{redir}\">{month}</a></li>" 
     return HttpResponse(f"<ul>{monthsList}</ul>")
 
-
 def monthslist(request, monthsl):
+    var = list(monthsinStr.keys())
     for i in monthsinStr:
-        if (monthsl == i):
-                return (HttpResponse(monthsinStr.get(monthsl)))
-    return HttpResponse(f"The url you entered '{monthsl}' is incorrect! ")
-    # mmm = monthsinStr.keys()
-    # vvv = str(type(mmm))
-    # return HttpResponse("<h1>f'vvv{vvv}'</h1>")
+        if (monthsl.lower() == i):
+            return (HttpResponse(monthsinStr.get(monthsl.lower())))
+        elif int(monthsl) < 13 and int(monthsl) > 0 and monthsinStr.get(var[int(monthsl) - 1]):
+            return (HttpResponse(monthsinStr.get(var[int(monthsl) - 1]))) 
+        else:
+            return HttpResponse(f"The url you entered '{monthsl}' is incorrect! ")
+
+
+
+
+
+
+
