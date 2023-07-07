@@ -1,0 +1,45 @@
+body {
+  background-color: rgba(0, 255, 255, 0.438);
+  /* background-color: blue; */
+}
+h6 {
+  font-size: large;
+  display: flex;
+  justify-content: center;
+}
+.ull {
+  list-style-type: none;
+  background-color: rgba(137, 43, 226, 0.137);
+  border-radius: 30px;
+  border: 2px solid green;
+  padding: 15px;
+  /* width: fit-content; */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.lis_css {
+  list-style-type: none;
+  background-color: rgba(137, 43, 226, 0.137);
+  border-radius: 30px;
+  border: 2px solid green;
+  padding: 10px;
+  margin: 10px;
+  width: 150px;
+  cursor: pointer;
+  text-align: center;
+  overflow: hidden;
+  /* color: rgba(0, 0, 0, 0.705); */
+}
+.lis_css:hover {
+  background-color: rgb(137, 43, 226);
+}
+.lis_css:hover a {
+  color: white;
+}
+a {
+  /* box-sizing: content-box; */
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  /* padding: 0 100px; */
+}

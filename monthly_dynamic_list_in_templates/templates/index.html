@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'index.css' %}" />
+    <title>Months Dynamic List With History</title>
+  </head>
+  <body>
+    <h6>
+      TH IS A MONTHS LIST, CLICK ON ANY MONTH TO SEE THE HISTORY OF YOUR CLICKS
+    </h6>
+    <ul class="ull">
+      {% comment %}
+      <li>{{monthsinStr.get('january')}}</li>
+      {% endcomment %} {% comment %}
+      <li>{{monthsinStr}}</li>
+      {% endcomment %} 
+      {% comment %} {% for key,value in monthsinStr.items %} {% endcomment %}
+      {% for month in monthsinStr %}
+      {% comment %}
+      <a href="{{redir}}" target="blank">
+        {% endcomment %} 
+        {% comment %} <a href="{% url 'reversing' %}"> {% endcomment %}
+      <a href="{% url 'months-description' month  %}">
+        <li class="lis_css">{{ month | capfirst }}</li>
+      </a>
+      {% comment %}
+      <li class="lis_css">{{value}}</li>
+      {% endcomment %} {% endfor %}
+    </ul>
+  </body>
+</html>
+
+{% comment %} {% for key, value in my_dictionay.items %}
+<li>{{ key }} : {{ value }}</li>
+{% endcomment %}
