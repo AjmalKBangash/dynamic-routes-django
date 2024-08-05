@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.shortcuts import  render
 from django.urls import reverse
 # from months_dynamic_list import views as notem_views
 
@@ -31,10 +30,7 @@ data = {
 def monthshistory(request):
     # res = monthsinStr.get(enter)
     currenturl = request._current_scheme_host+request.path
-    print("This is path")
-    print(currenturl)
     return render(request,'index.html', data)
-    return HttpResponse("Salam")
 
 def handlereverse(request):
     # currenturl2 = request.get_host()+request.path
